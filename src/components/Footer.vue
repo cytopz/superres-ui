@@ -9,7 +9,7 @@
         >
           superres-upscaling</a
         >
-        &mdash; v1.0.0
+        &mdash; v1.0.1
       </span>
     </v-col>
   </v-footer>
