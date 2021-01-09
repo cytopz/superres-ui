@@ -9,9 +9,9 @@
     <v-card>
       <v-card-title> Hasil Upscale Gambar </v-card-title>
       <img-comparison-slider>
-        <img width="1092vw" slot="after" :src="after" alt="Sesudah upscaling" />
+        <img width="1400vw" slot="after" :src="after" alt="Sesudah upscaling" />
         <img
-          width="1092vw"
+          width="1400vw"
           slot="before"
           :src="before"
           alt="Sebelum upscaling"
@@ -41,12 +41,15 @@ export default {
   },
   computed: {
     parsedHeaderAfter: function () {
-      const header = this.after.split(",")[0];
-      const [mime, enc] = header.split(";");
-      return {
-        type: mime.slice(11),
-        enc: enc,
-      };
+      if (this.after) {
+        const header = this.after.split(",")[0];
+        const [mime, enc] = header.split(";");
+        return {
+          type: mime.slice(11),
+          enc: enc,
+        };
+      }
+      return null;
     },
   },
   methods: {
