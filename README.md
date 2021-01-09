@@ -1,24 +1,7 @@
 # superres-ui
 
-## Project setup
-```
-npm install
-```
+Front-end web application for UI of OpenCV `dnn_superres` implementation (using FSRCNN).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- http://mmlab.ie.cuhk.edu.hk/projects/FSRCNN.html
+- https://github.com/Saafke/FSRCNN_Tensorflow -- FSRCNN implementation in TensorFlow
+- https://github.com/cytopz/superres-api -- 1-endpoint REST API to serve the model on the cloud
