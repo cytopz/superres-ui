@@ -1,48 +1,52 @@
 <template>
   <v-container>
-    <v-form v-model="valid" @submit.prevent="onSubmit">
-      <file-drop :loading="fileLoading" @change="onChange" />
-      <v-select
-        v-model="selectedModel"
-        :items="models"
-        label="Model"
-        style="margin-top: 24px"
-        outlined
-        disabled
-      >
-      </v-select>
-      <v-select
-        :items="scales"
-        v-model="form.upscale"
-        :rules="rules.scaleRequired"
-        label="Scale"
-        outlined
-      />
-      <v-btn
-        block
-        color="primary"
-        type="submit"
-        :disabled="!valid || !form.img"
-        :loading="loading"
-      >
-        Upscale!
-        <v-icon> mdi-chevron-double-up </v-icon>
-      </v-btn>
-    </v-form>
-    <dialog-viewer
-      :show="showDialog"
-      :before="form.img"
-      :after="upscaled"
-      @close="showDialog = false"
-    ></dialog-viewer>
-    <v-snackbar v-model="notif.show" timeout="-1" :color="notif.color">
-      {{ notif.msg }}
-      <template v-slot:action="{ attrs }">
-        <v-btn color="dark" text v-bind="attrs" @click="notif.show = false">
-          Tutup
-        </v-btn>
-      </template>
-    </v-snackbar>
+    <v-row no-gutters justify="center">
+      <v-col cols="12" xs="12" sm="10" md="12" lg="10">
+        <v-form v-model="valid" @submit.prevent="onSubmit">
+          <file-drop :loading="fileLoading" @change="onChange" />
+          <v-select
+            v-model="selectedModel"
+            :items="models"
+            label="Model"
+            style="margin-top: 24px"
+            outlined
+            disabled
+          >
+          </v-select>
+          <v-select
+            :items="scales"
+            v-model="form.upscale"
+            :rules="rules.scaleRequired"
+            label="Scale"
+            outlined
+          />
+          <v-btn
+            block
+            color="primary"
+            type="submit"
+            :disabled="!valid || !form.img"
+            :loading="loading"
+          >
+            Upscale!
+            <v-icon> mdi-chevron-double-up </v-icon>
+          </v-btn>
+        </v-form>
+        <dialog-viewer
+          :show="showDialog"
+          :before="form.img"
+          :after="upscaled"
+          @close="showDialog = false"
+        ></dialog-viewer>
+        <v-snackbar v-model="notif.show" timeout="-1" :color="notif.color">
+          {{ notif.msg }}
+          <template v-slot:action="{ attrs }">
+            <v-btn color="dark" text v-bind="attrs" @click="notif.show = false">
+              Tutup
+            </v-btn>
+          </template>
+        </v-snackbar>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
