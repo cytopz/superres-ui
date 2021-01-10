@@ -9,12 +9,18 @@
         >
           superres-upscaling</a
         >
-        &mdash; v1.0.0
+        &mdash; {{ appVer }}
       </span>
     </v-col>
   </v-footer>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    appVer: function () {
+      return process.env.VUE_APP_VERSION;
+    },
+  },
+};
 </script>
