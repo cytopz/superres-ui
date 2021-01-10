@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless color="white">
+  <v-footer padless>
     <v-col class="text-center" cols="12" style="padding: 4px">
       <span class="text-overline">
         <a
@@ -9,12 +9,18 @@
         >
           superres-upscaling</a
         >
-        &mdash; v1.0.1
+        &mdash; {{ appVer }}
       </span>
     </v-col>
   </v-footer>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    appVer: function () {
+      return process.env.VUE_APP_VERSION;
+    },
+  },
+};
 </script>

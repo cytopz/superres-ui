@@ -3,7 +3,7 @@
     id="dropzone"
     tabindex="0"
     class="rounded-lg"
-    color="grey lighten-4"
+    color="accent"
     width="100%"
     height="200"
     rounded
@@ -27,7 +27,7 @@
       </v-btn>
       <v-progress-circular v-else-if="loading" indeterminate>
       </v-progress-circular>
-      <span v-else class="subtitle-2 grey--text text--darken-2">
+      <span v-else class="subtitle-2">
         {{ file.name }} &mdash; {{ file.size }} KB
         <v-btn icon @click="removeFile">
           <v-icon size="22">mdi-close</v-icon>
