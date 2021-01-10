@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless color="white">
+  <v-footer padless>
     <v-col class="text-center" cols="12" style="padding: 4px">
       <span class="text-overline">
         <a
